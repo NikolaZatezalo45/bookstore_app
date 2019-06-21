@@ -1,0 +1,12 @@
+h1 New Division
+=form_with model: @genre, local: true do |form|
+
+  p
+    = form.label :'Genre name'
+    = form.text_field :name
+
+  p
+    = form.submit
+
+  p
+    = link_to 'Back', genres_path
