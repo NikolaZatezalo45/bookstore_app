@@ -11,7 +11,11 @@ class GenresController < ApplicationController
     @genre = Genre.new(genre_params)
     @genre.save
     redirect_to genres_path
+  end
 
+  def show
+    @genre = Genre.find(params[:id])
+    @books = @genre.books.all
   end
 
   private

@@ -1,22 +1,4 @@
 h1 New Book
-=form_with model: @book, local: true do |form|
-
-  p
-    = form.label :'Book name'
-    = form.text_field :name
-
-  p
-    = form.label :'Description'
-    = form.text_field :description
-  p
-    = form.label :'Date Published'
-    = form.date_select :publish_date, { prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 100, end_year: Date.today.year}, {required: true}
-  p
-    = form.label :'Genres'
-    = collection_select(:book, :genre_id, Genre.all, :id, :name)
-
-  p
-    = form.submit
-
-  p
-    = link_to 'Back', books_url
+= render 'form'
+p
+=link_to 'Back', root_url
