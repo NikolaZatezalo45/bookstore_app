@@ -1,24 +1,21 @@
-h1 List of Books
-
+h1 Books
 -if current_user
-  h3 = link_to 'New Book', new_book_path
+ =>link_to 'New Book', new_book_path
+ =>link_to 'Genres', genres_url
+ br
+ =>link_to 'View Profile', controller: 'pages'
+ =>link_to 'Sign out', destroy_user_session_path, method: :delete
 
--@books.each do |book|
-  b Name:
-  =< book.name
-  br
-  b Author:
-  =< book.user.first_name
-  =< book.user.last_name
-  br
-  b Genre:
-  =< book.genre.name
-  br
-  b Description:
-  =< book.description
-  br
-  b Date Published:
-  =< book.publish_date
-  p
+-else
+ =link_to 'Sign in', new_user_session_path
+p
 
-h3 = link_to 'Back', authenticated_root_path
+table
+ tr
+   th Book name
+   th Genre name
+
+ -@books.each do |book|
+   tr
+     td = link_to book.name,book_path(book)
+     td =book.genre.name

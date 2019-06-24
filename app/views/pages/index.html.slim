@@ -5,5 +5,4 @@ h1 Your Profile:
     h3 = link_to 'sign out', destroy_user_session_path,
     method: :delete
     br
-    h2 = link_to 'View Genres', controller: 'genres'
-    h2 = link_to 'View book', controller: 'books'
+    = link_to 'Back', controller: 'books'

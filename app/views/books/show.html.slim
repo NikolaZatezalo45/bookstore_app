@@ -1,0 +1,27 @@
+h1 Book Infomation:
+p
+ = 'Book Name: '
+ = @book.name
+ br
+
+p
+ = 'Book Description: '
+ = @book.description
+ br
+p
+ = 'Date Published: '
+ = @book.publish_date
+ br
+
+ p
+   = 'Book Author: '
+   = "#{@book.user.first_name} #{@book.user.last_name}"
+   br
+
+p
+ = 'Book Genre: '
+ = @book.genre.name
+ br
+
+= link_to 'Back', root_url
+=< link_to 'Edit', edit_book_path
