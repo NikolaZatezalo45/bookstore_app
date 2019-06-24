@@ -1,5 +1,7 @@
 h1 Genres
-h3 = link_to 'New Genre', new_genre_path
+-if current_user
+  h3 = link_to 'New Genre', new_genre_path
+
 -@genres.each do |genre|
   h3 = genre.name
 

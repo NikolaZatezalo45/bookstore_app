@@ -1,0 +1,24 @@
+h1 List of Books
+
+-if current_user
+  h3 = link_to 'New Book', new_book_path
+
+-@books.each do |book|
+  b Name:
+  =< book.name
+  br
+  b Author:
+  =< book.user.first_name
+  =< book.user.last_name
+  br
+  b Genre:
+  =< book.genre.name
+  br
+  b Description:
+  =< book.description
+  br
+  b Date Published:
+  =< book.publish_date
+  p
+
+h3 = link_to 'Back', authenticated_root_path
