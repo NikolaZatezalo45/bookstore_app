@@ -8,13 +8,9 @@ class BooksController < ApplicationController
     @user = User.find(current_user.id)
     @book = @user.books.find(params[:id])
   end
+
   def index
-    if current_user
-    @user = User.find(current_user.id)
-    @books = @user.books.all
-    else
-      @books = Book.all
-    end
+      @books = BooksHome.new(current_user).filterBooks
   end
 
   def new

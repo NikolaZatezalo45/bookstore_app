@@ -2,6 +2,7 @@ h1 Your Profile:
 -if current_user
     h3 = render 'profile'
     h3 = link_to 'Edit Profile', edit_user_registration_path
+    h3 => link_to 'View My Books', page_path(current_user.id)
     h3 = link_to 'sign out', destroy_user_session_path,
     method: :delete
     br
