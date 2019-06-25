@@ -1,13 +1,11 @@
-class BookPresenter < BasePresenter
+class BookPresenter
 
-  def initialize(user, template)
-    @user = user
-    @template = template
-    @books = Book.all
+  def initialize(book)
+    @book = book
   end
 
-  def h
-    @template
+  def fullname
+    "#{@book.user.first_name} #{@book.user.last_name}"
   end
 
 end

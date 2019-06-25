@@ -15,7 +15,7 @@ p
 
  p
    = 'Book Author: '
-   = "#{@book.user.first_name} #{@book.user.last_name}"
+   = BookPresenter.new(@book).fullname
    br
 
 p
