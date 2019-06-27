@@ -2,8 +2,30 @@ h1 Your Profile:
 -if current_user
     h3 = render 'profile'
     h3 = link_to 'Edit Profile', edit_user_registration_path
-    h3 => link_to 'View My Books', page_path(current_user.id)
+    h3 => link_to 'Back', controller: 'books'
     h3 = link_to 'sign out', destroy_user_session_path,
     method: :delete
     br
-    = link_to 'Back', controller: 'books'
+    h3 Books You've Written
+    table
+      tr
+        th Book name
+        br
+        th Genre name
+
+      -@books.each do |book|
+        tr
+          td =link_to book.name, book_path(book)
+          td = link_to book.genre.name, genre_path(book.genre)
+
+    h3 Books You've Bought
+    table
+      tr
+        th Book name
+        br
+        th Genre name
+
+        -@purch_books.each do |purch_book|
+          tr
+          td =link_to purch_book.name, book_path(purch_book)
+          td = link_to purch_book.genre.name, genre_path(purch_book.genre)

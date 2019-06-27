@@ -3,6 +3,6 @@ h1 Genres
   h3 = link_to 'New Genre', new_genre_path
 
 -@genres.each do |genre|
-  h3 = genre.name
+  h3 = link_to genre.name, genre_path(genre)
 
-= link_to 'Back', root_url
+= link_to 'Back', :back

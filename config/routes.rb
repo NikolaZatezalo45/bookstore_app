@@ -7,5 +7,6 @@ mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 resources :genres
 resources :books
 resources :pages
+post 'purchase', to: 'book_purchases#create'
 
 end
