@@ -24,9 +24,15 @@ p
  br
 
 -if current_user && current_user.id == @book.user.id
-  = link_to 'Back', :back
+  = link_to 'Back', pages_path
   =< link_to 'Edit', edit_book_path
-  =< link_to 'Delete',book_path(@book), method: :delete, data: { confirm: 'Are you sure?' }
+  =< link_to 'Delete Book',book_path(@book), method: :delete, data: { confirm: 'Are you sure?' }
+  = render 'reviews'
+
+-elsif current_user
+  =< link_to 'Back', root_path
+  =< link_to 'Review', new_book_review_path(@book)
+  = render 'reviews'
 
 -else
   = link_to 'Back', :back

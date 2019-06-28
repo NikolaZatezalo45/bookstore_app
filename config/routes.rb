@@ -4,9 +4,17 @@ Rails.application.routes.draw do
 root 'books#index'
 
 mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
-resources :genres
-resources :books
 resources :pages
+resources :genres
+resources :reviews
+
+resources :books do
+   resources :reviews
+ end
+ resources :users do
+   resources :reviews
+ end
+
 post 'purchase', to: 'book_purchases#create'
 
 end

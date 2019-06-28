@@ -1,0 +1,13 @@
+h1 New Review
+=form_with model: @review, local: true, url: book_reviews_path(@book)  do |form|
+
+  p
+    = form.label :'Review'
+    br
+    = form.text_area :body
+
+  p
+    = form.submit
+
+  p
+    = link_to 'Back', :back

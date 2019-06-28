@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  body: MyText
+  reviewable: one
+  reviewable_type: Reviewable
+
+two:
+  body: MyText
+  reviewable: two
+  reviewable_type: Reviewable

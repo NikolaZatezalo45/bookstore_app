@@ -12,4 +12,6 @@ class User < ApplicationRecord
 
  has_many :authors, through: :author_associations, source: :book
  has_many :purchases, through: :purchaser_associations, source: :book
+
+ has_many :reviews
 end
