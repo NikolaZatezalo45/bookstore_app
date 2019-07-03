@@ -11,7 +11,8 @@ resources :reviews
 resources :books do
    resources :reviews
  end
- resources :users do
+
+ resources :reviews do
    resources :reviews
  end
 

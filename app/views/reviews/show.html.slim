@@ -1,0 +1,11 @@
+table
+ tr
+   th Review author
+   br
+   th Review
+
+ -@rev_review.each do |rev|
+   tr
+     td = rev.body
+br
+=render 'new_review_review'

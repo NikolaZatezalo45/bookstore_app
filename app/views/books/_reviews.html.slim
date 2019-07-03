@@ -7,7 +7,7 @@ table
  -@reviews.each do |review|
    tr
      td = review.user.first_name
-     td = review.body
+     td = link_to review.body, book_review_path(@book,review)
      - if current_user && current_user.id == review.user_id
        td =< link_to 'Delete',book_review_path(@book,review), method: :delete, data: { confirm: 'Are you sure?' }
        td =< link_to 'Edit', edit_book_review_path(@book,review)
